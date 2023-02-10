@@ -6,10 +6,12 @@ from airflow import DAG
 
 # Operators; we need this to operate!
 from airflow.operators.python import PythonOperator
+import pynautobot
 
 
 def simple_operation():
     print("Hello, World from a packaged dag!")
+    print(pynautobot.api)
 
 
 with DAG(
