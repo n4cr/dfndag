@@ -7,11 +7,15 @@ from airflow import DAG
 # Operators; we need this to operate!
 from airflow.operators.python import PythonOperator
 import pynautobot
+import arrow
 
 
 def simple_operation():
     print("Hello, World from a packaged dag!")
     print(pynautobot.api)
+    res = arrow.get('2013-05-11T21:23:58.970460+07:00')
+
+    print(res)
 
 
 with DAG(
